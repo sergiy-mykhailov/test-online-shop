@@ -1,0 +1,12 @@
+
+.info-container {
+    display: flex;
+    height: 100%;
+    position: relative;
+}
+
+.info-card {
+    width: 20%;
+    height: 100%;
+    position: absolute;
+}

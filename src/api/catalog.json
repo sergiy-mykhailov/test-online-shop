@@ -1,0 +1,51 @@
+[
+  {
+    "id":1001,
+    "title":"Milk",
+    "img": "milk.jpg",
+    "description":"Milk is a white liquid produced by the mammary glands of mammals.",
+    "price": 17.90
+  },{
+    "id":1002,
+    "title":"Bread",
+    "img": "bread.jpg",
+    "description":"Bread is a staple food prepared from a dough of flour and water, usually by baking.",
+    "price": 9.30
+  },{
+    "id":1003,
+    "title":"Pumpkin",
+    "img": "pumpkin.jpg",
+    "description":"A pumpkin is a cultivar of a squash plant, most commonly of Cucurbita pepo, that is round, with smooth, slightly ribbed skin, and deep yellow to orange coloration.",
+    "price": 5.55
+  },{
+    "id":1004,
+    "title":"Tomato",
+    "img": "tomato.jpg",
+    "description":"The tomato (see pronunciation) is the edible, often red, fruit of the plant Solanum lycopersicum, commonly known as a tomato plant.",
+    "price": 27.97
+  },{
+    "id":1005,
+    "title":"Сucumber",
+    "img": "cucumber.jpg",
+    "description":"Cucumber (Cucumis sativus) is a widely cultivated plant in the gourd family, Cucurbitaceae.",
+    "price": 20.99
+  },{
+    "id":1006,
+    "title":"Banana",
+    "img": "banana.jpg",
+    "description":"The banana is an edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants in the genus Musa.",
+    "price": 23.99
+  },{
+    "id":1007,
+    "title":"Beer",
+    "img": "beer.jpg",
+    "description":"Beer is the oldest and most widely consumed alcoholic drink in the world, and the third most popular drink overall after water and tea.",
+    "price": 55.23
+  },{
+    "id":1008,
+    "title":"Coffee",
+    "img": "coffee.jpg",
+    "description":"Coffee is a brewed drink prepared from roasted coffee beans, which are the seeds of berries from the Coffea plant.",
+    "price": 70
+  }
+]
