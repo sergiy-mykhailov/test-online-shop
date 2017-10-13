@@ -1,6 +1,5 @@
 
 import AppConstants from '../constants/AppConstants';
-import api from '../api';
 
 export const setUser = (user) => {
     return {
@@ -9,22 +8,20 @@ export const setUser = (user) => {
     };
 };
 
-export const getCatalog = () => {
+export const getCatalog = (catalog) => {
     return {
         type: AppConstants.CATALOG_GET,
-        catalog: api.getCatalog()
+        catalog
     };
 };
 
 export const deleteCatalog = () => {
-    api.deleteCatalog();
     return {
         type: AppConstants.CATALOG_DELETE
     };
 };
 
 export const deleteProduct = (id) => {
-    api.deleteProduct(id);
     return {
         type: AppConstants.PRODUCT_DELETE,
         id
@@ -32,7 +29,6 @@ export const deleteProduct = (id) => {
 };
 
 export const saveProduct = (product) => {
-    api.saveProduct(product);
     return {
         type: AppConstants.PRODUCT_SAVE,
         product

@@ -1,6 +1,8 @@
 
 import React from 'react';
 import { connect } from 'react-redux'
+
+import api from '../api';
 import { getCatalog, deleteCatalog } from '../actions'
 import Home from '../components/Home.jsx';
 
@@ -13,10 +15,14 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    dispatch(getCatalog());
+
+    api.getCatalog().then((catalog) => dispatch(getCatalog(catalog)),
+            err => console.error(err));
+
     return {
         onDelete: () => {
-            dispatch(deleteCatalog());
+            api.deleteCatalog().then(() => dispatch(deleteCatalog()),
+                    err => console.error(err));
         }
     }
 };

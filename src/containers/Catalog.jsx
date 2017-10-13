@@ -1,7 +1,9 @@
 
 import React from 'react';
 import { connect } from 'react-redux'
+
 import { deleteProduct } from '../actions'
+import api from '../api';
 import Catalog from '../components/Catalog.jsx';
 
 const mapStateToProps = (state) => {
@@ -14,7 +16,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         onDelete: (id) => {
-            dispatch(deleteProduct(id));
+            api.deleteProduct(id)
+                .then(() => dispatch(deleteProduct(id)),
+                    err => console.error(err));
         }
     }
 };

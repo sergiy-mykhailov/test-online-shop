@@ -4,31 +4,67 @@ import catalog from './catalog.json';
 export default {
 
     getCatalog () {
-        let localCatalog = JSON.parse(localStorage.getItem('online-shop-catalog'));
-        if (localCatalog) catalog.push(...localCatalog);
+        return new Promise((resolve, reject) => {
+            setTimeout( () => {
 
-        return catalog;
+                let localCatalog;
+                try {
+                    localCatalog = JSON.parse(localStorage.getItem('online-shop-catalog'));
+                } catch (err) { reject(err) }
+
+                if (localCatalog) catalog.push(...localCatalog);
+
+                resolve(catalog);
+            }, 200);
+        });
     },
 
     deleteCatalog () {
-        localStorage.setItem('online-shop-catalog', JSON.stringify([]));
+        return new Promise((resolve, reject) => {
+            setTimeout( () => {
+
+                localStorage.setItem('online-shop-catalog', JSON.stringify([]));
+                resolve();
+            }, 200);
+        });
     },
 
     saveProduct (product) {
-        let localCatalog = JSON.parse(localStorage.getItem('online-shop-catalog'));
-        if (!localCatalog) localCatalog = [];
+        return new Promise((resolve, reject) => {
+            setTimeout( () => {
 
-        localCatalog.push(product);
+                let localCatalog;
+                try {
+                    localCatalog = JSON.parse(localStorage.getItem('online-shop-catalog'));
+                } catch (err) { reject(err) }
 
-        localStorage.setItem('online-shop-catalog', JSON.stringify(localCatalog));
+                if (!localCatalog) localCatalog = [];
+
+                localCatalog.push(product);
+                localStorage.setItem('online-shop-catalog', JSON.stringify(localCatalog));
+
+                resolve();
+            }, 200);
+        });
     },
 
     deleteProduct (id) {
-        let localCatalog = JSON.parse(localStorage.getItem('online-shop-catalog'));
-        if (!localCatalog) return;
 
-        const newCatalog = localCatalog.filter( (item) => item.id !== id );
+        return new Promise((resolve, reject) => {
+            setTimeout( () => {
 
-        localStorage.setItem('online-shop-catalog', JSON.stringify(newCatalog));
+                let localCatalog;
+                try {
+                    localCatalog = JSON.parse(localStorage.getItem('online-shop-catalog'));
+                } catch (err) { reject(err) }
+
+                if (!localCatalog) reject(new Error('Data not available...'));
+
+                const newCatalog = localCatalog.filter( (item) => item.id !== id );
+                localStorage.setItem('online-shop-catalog', JSON.stringify(newCatalog));
+
+                resolve();
+            }, 200);
+        });
     }
 }
